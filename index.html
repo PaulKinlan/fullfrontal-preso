@@ -1,0 +1,984 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Building apps.</title>
+		<meta name="description" content="An apps presentation">
+		<meta name="author" content="Paul Kinlan">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/demos.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+			<style>
+			  .warning { color: red !important; }
+			  h1.warning, h1 .warning { text-shadow: 0 1px 0 #cc0000, 0 2px 0 #c90000, 0 3px 0 #bb0000, 0 4px 0 #b90000, 0 5px 0 #aa0000, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.15);  }
+			 h2.warning { text-shadow: 0 1px 0 #cc0000, 0 2px 0 #c90000, 0 3px 0 #bb0000, 0 4px 0 #b90000, 0 5px 0 #aa0000, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.15);  }
+			</style>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			    <section>
+				   <section>
+			        <h1>Building Web apps of the future today, tomorrow and yesterday</h1>
+			        <p>By @Paul Kinlan</p>
+			       </section>
+				 <section>
+			        <h1 class="warning">Me</h1>
+			        <h2>Developer Advocate at Google</h2>
+			        <img src="images/me.png">
+			        <p>@Paul Kinlan</p>
+			       </section>
+			     <section>
+				    <h2>I heard this on a train</h2>
+				    <q>Oh I don't use apps on the web, I just use it for news and wikipedia</q> &mdash; Some guy
+				 </section>
+			    </section>
+			    <section>
+			        <section>
+			            <h1>
+			                <font face="impact">Building</font>
+			            </h1>
+			            <h1>
+			                <font face="impact">Apps for</font>
+			            </h1>
+			            <h1>
+			                <font face="impact">Yesterday</font>
+			            </h1>
+			        </section>
+			        <section>
+			            <h1 class="warning">Don't do it</h1>
+			        </section>
+			    </section>
+			    <section>
+			        <section>
+			            <h1>
+			                <font face="impact">Building</font>
+			            </h1>
+			            <h1>
+			                <font face="impact">Apps for</font>
+			            </h1>
+			            <h1>
+			                <font face="impact">Today</font>
+			            </h1>
+			        </section>
+			        <section>
+			            <h1>
+			                <font face="impact">IT's HARD</font>
+			            </h1>
+			        </section>
+			        <section>
+			            <h1 class="warning">
+			                <font face="impact" >Very HARD</font>
+			            </h1>
+			        </section>
+					 <section>
+				            <h1>
+				                <font face="impact">It is also Broken</font>
+				            </h1>
+				            <p>DateDiff anyone?</p>
+				        </section>
+			        <section>
+			            <h1>We can still do some <span class="warning">Amazing</span> stuff</h1>
+					</section>
+					<section>
+			            <h1>e.g Chrome Web Lab</h1>
+						<a href="http://chromeweblab.com" target="_blank"><img src="images/chromeweblab.png"></a>
+						<p>chromeweblab.com</p>
+					</section>
+					<section>
+			            <h1>And Jam with Chrome</h1>
+			            <h2>Launched yesterday!</h2>
+						<a href="http://jamwithchrome.com" target="_blank"><img src="images/chromeweblab.png"></a>
+						<p>jamwithchrome.com</p>
+					</section>
+			            <section>
+			                <h2>What I want from an app</h2>
+			<div style="text-align: center;">
+				<div style="text-align: left;">
+			    <ol>
+			        <li>Availability</li>
+			    </ol>
+			    <p style="padding: 10px;">With added</p>
+			    <ol start="2">
+			        <li>Interoperability</li>
+			 		<li>Experience</li>
+			    </ol>
+			</div>
+			</div>
+
+			</section>
+			</section>
+			<section>
+				  <section>
+	                <h1>Availability</h1>
+	                <q>Availability - noun: The act of being awesome all the time.</q> &mdash; Kinsters Compendium of Wordage
+	              </section>
+			                <section>
+			                    <h2>Why offline?</h2>
+			                    <ol>
+				                  <li>Mobile?
+								  <li>Responsiveness?
+								</ol>
+								<br/><br/>
+								<div><span class="warning">Be there when your users need you.</span></div>
+			                </section>
+			                <section>
+				              <h2>Experiment with Offline Apps</h2>
+				              <ul>
+					  <li>Top 50(ish) apps on iOS and Android
+					  <li>Downloaded App
+					  <li>Pulled the plug
+					  <li>Loaded app
+					</ul>
+				            </section> 
+				   <style>
+				      .apps img {
+					    float: left;
+					    width: 20%;
+				      }
+				   </style>
+				
+							<section class="apps">
+						      <img src="images/app1.png">
+							  <img src="images/app2.png">
+							  <img src="images/app3.png">
+						   	  <img src="images/app4.png">
+							  <img src="images/app5.png">
+							  <img src="images/app6.png">
+							  <img src="images/app7.png">
+							  <img src="images/app8.png">
+							  <img src="images/app9.png">
+							</section>
+						
+			
+							<section>
+				              <h2>Same Experiment with Offline Web Apps</h2>
+				            </section>
+			
+							<section>
+							  <h2>Most apps</h2>
+						      <img src="images/offlineweb.png">
+							</section>
+							
+							<section>
+							  <h2>The exception</h2>
+						      <img src="images/everytimezone1.png">
+							</section>
+							
+							<section>
+							  <h2>Summary</h2>
+							  <p class="warning">Native Apps win hands down</p><br>
+							<ul>
+								<li>Lots works brilliantly offline, no online requirement.
+								<li>Many load and offer UI with cached content but needs web for more information.
+								<li>Many games loads and then download even more data. 
+								<li>Minority of apps fail to load.
+							</ul>
+							<br>
+							<p class="warning"><br>The user is kept inside the app experience</p>
+							</section>
+							<section>
+								<h2>Web Developers are from Venus</h2>
+							<p>
+							  <q>I will add <span class="warning" style="font-weight: bold;">offline</span> support into my app</q> &mdash; A Web Dev
+							</p>
+							<p>
+							  <q>I will add <span class="warning" style="font-weight: bold;">online</span> support into my app</q> &mdash; An App Dev
+							</p>
+							</section>
+		
+			                <section>
+			                    <h1 class="warning">WARNING</h1>
+			                    <h2>Offline apps are a paradigm shift for web developers</h2>
+			                    <br />
+								<br />
+			
+			                    <h3>The Web is a hodge-podge of API's that don't quite work together</h3>
+			                </section>
+			                    <section>
+			                      <h2>AppCache</h2>
+			<div>If you want to have any offline experience <span class="warning" style="font-weight: bold;">at all</span>, you have to use it.</div>
+			<img src="images/bart.png">
+			                    </section>
+								<section>
+			                      <h2>AppCache Hints</h2>
+			                      <ul>
+									<li>Prefer client side templating
+									<li>Avoid HTML5 history, prefer onhashchange
+									<li>Put webfonts in to the app cache
+									<li>NETWORK: * for using analytics
+				                  </ul>
+			
+			                    </section>
+			                    <section>
+			                        <h2>Storage?</h2>
+			<div>If you want to have any offline storage at all, you have to use both indexedDB and WebSQL.</div>
+			<div><span class="warning">Note</span>: The versioning API just changed :\</div>
+			                    </section>
+			</section>
+			<section>
+			                    <section>
+			                        <h1>Interoperability</h1>
+			                        <q>No App is an island. &mdash; Paul Kinlan</q>
+			                    </section>
+			                    <section>
+			                        <h2>Web Intents</h2>
+			                        <h3>Back to the drawing board.</h3>
+									<img src="images/sadpanda.jpg">
+									<a href="http://www.flickr.com/photos/shawnhoke/4274210199/sizes/z/in/photostream/">Shawn Hoke</a>
+			                    </section>
+			                    <section>
+			                        <h2>register Protocol Handler</h2>
+			<p>Use well known schemes</p>
+			                        <pre><code>navigator.registerProtocolHandler("mailto", "http://paul.kinlan.me/?%s")</code></pre>
+			<p>Create new schemes</p>
+			<pre><code>navigator.registerProtocolHandler("web+ImOnaHorse", "http://paul.kinlan.me/?%s")</code></pre>
+				                    
+									<div><span class="warning">Warning</span>: Does not work well offline.</div>
+			                    </section>
+			                    <section>
+			                        <h2>register Content Handler</h2>
+									<pre><code>navigator.registerContentHandler("text/plain", "http://paul.kinlan.me/?%s")</code></pre>
+									<div><span class="warning">Warning</span>: Does not work well offline.</div>
+			                    </section>
+								<section>
+									<h2>API's are only half the problem</h2>
+									<div>Eco-systems need to be built around API's.</div>
+									<div>You have to provide value to the developer.</div>
+								</section>
+							</section>
+							<section>
+			                    <section>
+			                        <h1>Experience</h1>
+			                        <q>Do what the user expects &mdash; Paul Kinlan</q>
+			                    </section>
+			        
+								<section>
+			                        <h2>Download</h2>
+			  						<div>Navigating <a href="images/me.png" download="awesome.png">/to  something isn't</a> cool.</div>
+									<pre><code>Navigating &lt;a href="images/me.png" <b>download="awesome.png"</b>&gt;/to something isn't &lt;/a&gt; cool.</code></pre>
+								
+			                    </section>
+								 <section>
+				                      <h2>createObjectURL</h2>
+									<pre><code>window.URL.createObjectURL(b);</code></pre>
+										<div id="container">
+										    <div contenteditable="" id="typer">This is a story all about how...</div>
+										    <input type="text" value="MyFile.txt" placeholder="filename.txt">
+										    <button onclick="downloadFile()">Create file</button>
+										    <div id="output"></div> 
+										  </div>
+									<pre><code>var downloadFile = function() {
+  window.URL = window.webkitURL || window.URL;
+  var typer = document.getElementById("typer");
+  var b = new Blob([typer.textContent], {type: "text/plain"})
+
+  var a = document.createElement('a');
+  a.download = container.querySelector('input[type="text"]').value;
+  a.href = window.URL.createObjectURL(b);
+  a.textContent = 'Download ready';
+
+  a.dataset.downloadurl = ["text/plain", a.download, a.href].join(':');
+
+  output.appendChild(a);
+};</code></pre>
+
+<script>
+	var downloadFile = function() {
+window.URL = window.webkitURL || window.URL;
+var typer = document.getElementById("typer");
+
+var b = new Blob([typer.textContent], {type: "text/plain"})
+
+var a = document.createElement('a');
+a.download = container.querySelector('input[type="text"]').value;
+a.href = window.URL.createObjectURL(b);
+a.textContent = 'Download ready';
+
+a.dataset.downloadurl = ["text/plain", a.download, a.href].join(':');
+
+output.appendChild(a);
+}
+</script>
+				</section>
+				
+				
+			                    <section>
+			                      <h2>Accessing Files</h2> 
+			                      <div>
+				<pre><code>&lt;input type=file <i>[<span style="line-height: 1.2em;letter-spacing: -0.02em;">webkitDirectory]&gt;</span></i></code></pre>
+				<pre ><code style="float: right;">input.onchange = function(e) {
+  var files = e.srcElement.files;
+  for(var f in files) {
+    var file = files[f];
+    var li = document.createElement("li");
+    li.textContent = file.name;
+    filelist.appendChild(li);
+  }
+};</code></pre>
+      <div style="float:left;"><input type="file" id="filepicker" webkitDirectory>
+	    <ul id="filelist" style="max-height: 200px; height: 200px; font-size: 16px; overflow-y: auto">
+	    	
+	    </ul>
+	  </div>
+	</div>
+			                
+			            </section>
+	<script>filepicker.onchange = function(e) {
+  var files = e.srcElement.files;
+  for(var f in files) {
+    var file = files[f];
+    // Access the data
+    var li = document.createElement("li");
+    li.textContent = file.name + " " + file.size + " bytes of type " + file.type;
+    filelist.appendChild(li);
+  }
+};</script>		
+			
+			  			<section>
+	                      <h2>Accessing Dragged Files</h2>
+						  <img src="images/gmaildrag.png" style="width: 370px; float:right; padding:0; margin: 0;">
+						<pre style="width: initial;"><code style="float:left">target.ondrop = function(e) {
+  e.preventDefault();		
+  var files = e.dataTransfer.files;
+  for(var f in files) {
+    var file = files[f];
+    var li = document.createElement("li");
+    li.textContent = file.name;
+    filelist.appendChild(li);
+  }
+};</code></pre>
+    <style>
+      #drop, #drop2 {
+	    border: dotted 5px #c6c6c6;
+	    height: 100px;
+	    
+	    margin: 5px;
+	    -webkit-transition: all ease-in-out 1s;
+	    overflow-x: auto;
+	    font-size: 16px;
+      }
+
+      #drop:hover, #drop2:hover {
+	    border-radius: 40px;
+      }
+
+      #drop2 span {
+	    margin: 5px;
+	    
+      }
+    </style>
+    <div id="drop">
+	  
+	</div>
+	</section>
+	<script>
+	  var drop = document.getElementById("drop");
+	  drop.ondragover = function(ev) {
+		ev.preventDefault();
+		drop.textContent = ev.dataTransfer.items.length + " Files"
+	  };
+	
+	  drop.ondrop = function(ev) {
+		ev.preventDefault(ev);
+		var files = ev.dataTransfer.files
+		for(var f = 0; f < files.length; f++) {
+		    var file = files[f];
+		    var li = document.createElement("li");
+		    li.textContent = file.name;
+		    drop.appendChild(li);
+		  }
+	  };
+	</script>
+	
+	<section>
+		<h2>Actually Reading the file</h2>
+		<pre><code>var file = // Result of operation
+var reader = new FileReader();
+reader.onload = function(e) {
+  // READ first 10 bytes
+  var bytes = new Uint8Array(e.target.result.slice(0,10));
+  for(var b = 0; b &lt; bytes.length; b++ ) { 
+    drop2.innerText += "0x" + bytes[b].toString(16);
+  }
+};
+
+// Read the data in
+reader.readAsArrayBuffer(file);</code></pre>
+    <div id="drop2">
+	</div>
+	
+	<script>
+	  var drop2 = document.getElementById("drop2");
+	  drop2.ondragover = function(ev) {
+		ev.preventDefault();
+		drop2.textContent = ev.dataTransfer.items.length + " Files"
+	  };
+	
+	  drop2.ondrop = function(ev) {
+		ev.preventDefault(ev);
+		var file = ev.dataTransfer.files[0]
+		var reader = new FileReader();
+		// Closure to capture the file information.
+		reader.onload = function(e) {
+		  // first 10 bytes
+		  drop2.textContent = 0;
+		  var bytes = new Uint8Array(e.target.result.slice(0,10));
+		  for(var b = 0; b < bytes.length; b++ ) { 
+		    var span = document.createElement("span")
+		    span.innerText = "0x" + bytes[b].toString(16);
+		    drop2.appendChild(span)
+		  }
+		};
+
+        // Read the data in
+        reader.readAsArrayBuffer(file);
+	  };
+	</script>
+	
+	</section>
+	<section>
+		<h2>I can haz file system</h2>
+		<pre><code>window.requestFileSystem(
+  TEMPORARY,        // persistent vs. temporary storage
+  1024 * 1024,      // size (bytes) of needed space
+  initFs,           // success callback
+  opt_errorHandler  // opt. error callback, denial of access
+);</code></pre>
+	</section>
+	<section>
+		<h2>Caching Files</h2>
+		<pre><code>var xhr = new XMLHttpRequest();
+xhr.open('GET', '/path/to/image.png', true);
+xhr.responseType = 'arraybuffer';
+xhr.onload = function(e) {
+  window.requestFileSystem(TEMPORARY, 1024 * 1024, function(fs) {
+    fs.root.getFile('image.png', {create: true}, function(fileEntry) {
+
+      fileEntry.createWriter(function(writer) {
+        writer.onwriteend = function(e) { ... };
+        writer.onerror = function(e) { ... };
+        writer.write(new Blob([xhr.response], {type: 'image/png'}));
+      }, onError);
+
+    }, onError);
+  }, onError);
+};
+
+xhr.send();</code></pre>
+	</section>
+	<section>
+		<h2>Filer.js makes it easy</h2>
+		<a href="https://github.com/ebidel/filer.js">github.com/ebidel/filer.js</a>
+		<pre><code>var filer = new Filer();
+filer.init({persistent: false, size: 1024 * 1024}, function(fs) {...}, onError);
+
+filer.ls('path/to/some/dir/', function(entries) { ... }, onError);
+filer.cp('file.txt', '/path/to/folder', 'newname.txt', function(entry) {
+  // entry.fullPath == '/path/to/folder/newname.txt'
+}, onError);
+
+var b = new Blob(['body { color: red; }'], {type: 'text/css'});
+filer.write('styles.css', {data: b, type: b.type}, function(entry, writer) {
+    ...
+}, onError);</pre></code>
+	</section>
+	<section>
+		<h2>Make the file system API cross browser</h2>
+		<a href="https://github.com/ebidel/idb.filesystem.js">https://github.com/ebidel/idb.filesystem.js</a>
+		and a <a href="http://html5-demos.appspot.com/static/filesystem/idb.filesystem.js/demos/basic/index.html">Demo</a>  (http://goo.gl/WSRy0)
+		<pre><code>It's just the same. FTW.</code></pre>
+	</section>
+			        </section>
+			        <section>
+			            <section>
+			                <h1>
+			                    <font face="impact">Building<br>
+			                    </font>
+			                    <font face="impact">Apps for<br>
+			                    </font>
+			                    <font face="impact">Tomorrow...</font>
+			                </h1>
+			            </section>
+			            
+					<section>
+				       <h2>Camera input</h2>
+				       <video autoplay="true" id="camera" style="width: 320px; height: 240px; float: left; margin-right: 10px;"></video>
+				       <pre><code>var options = {video: true, audio: false};
+var v = document.querySelector('#camera');
+var callback = function(s){
+  v.src = window.URL.createObjectURL(s);
+}
+					
+navigator.getUserMedia(options, callback);</code></pre>
+				       <canvas id="anim" width="160" height="120" style="display: none;"></canvas>
+						<script>
+						  var onFailSoHard = function(e) {
+						    console.log('DE-NIED!', e);
+						  };
+
+						  // Not showing vendor prefixes.
+						  window.URL = window.URL || window.webkitURL;
+						  navigator.getUserMedia  = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+		
+						  navigator.webkitGetUserMedia({video: true, audio: false}, function(localMediaStream) {
+						    var video = document.querySelector('#camera');
+							var anim = document.querySelector('#anim');
+							var audio = document.querySelector('#mic');
+							var filter = document.querySelector('#cssfilter');
+						    filter.src = audio.src = video.src = window.URL.createObjectURL(localMediaStream);
+							var context = anim.getContext("2d");
+							var counter = 0;
+							var animId;
+							
+							Reveal.addEventListener( 'kill-anim', function() {
+							  if(animId) {
+							    clearInterval(animId);
+							    animId = undefined;	
+							  }
+							});
+							
+							Reveal.addEventListener( 'start-anim', function() {
+							  	animId = setInterval(function() {
+								  context.drawImage(video, 0, 0, 160, 120);
+								  counter ++;
+								  if(counter % 2) {
+									output1.style.backgroundImage = "url(" +  anim.toDataURL() + ")";
+									output1.style.opacity = 0;
+								  }
+								  else {
+									output2.style.backgroundImage = "url(" +  anim.toDataURL() + ")";
+									output1.style.opacity = 1;
+							      }
+
+							    }, 100);
+							  }, onFailSoHard);
+							} );
+						
+						</script>
+				    </section>
+					<section data-state="kill-anim">
+				       <h2>Audio input</h2>
+					   <audio autoplay="true" id="mic" controls></audio>
+<pre><code>// success callback when requesting audio input stream
+function gotStream(stream) {
+  var audioContext = new webkitAudioContext();
+
+  // Create an AudioNode from the stream.
+  var mStreamSource = audioContext.createMediaStreamSource(stream);
+
+  // Connect it to the destination to hear yourself (or any other node for processing!)
+  mStreamSource.connect( audioContext.destination );
+}
+
+navigator.webkitGetUserMedia( {audio:true}, gotStream );</code></pre>
+				    </section>
+					<style>
+					  video.cssfilter {
+						-webkit-animation: filters-anim 2s infinite alternate;
+						width:320px; height: 240px;
+						float: left;
+					  }
+					
+					  video.cssfilter ~ pre {
+						float: right;
+						width: 60%;
+					  }
+
+					  @-webkit-keyframes filters-anim {
+					    0% {
+						  -webkit-filter: blur(0px) grayscale(0);
+						}
+						50% {
+						  -webkit-filter: blur(3px) grayscale(0.5);
+						}
+						100% {
+						  -webkit-filter: blur(6px) grayscale(1);
+						}
+					  }
+					</style>
+					<section>
+					  <h1 class="warning">Apply CSS Filters</h1>
+					   <video autoplay class="cssfilter" id="cssfilter"></video>
+			   <pre><code>video.cssfilter {
+  -webkit-animation: filters-anim 2s infinite alternate;
+}
+
+@-webkit-keyframes filters-anim {
+  0% {
+    -webkit-filter: blur(0px) grayscale(0);
+  }
+  50% {
+    -webkit-filter: blur(3px) grayscale(0.5);
+  }
+  100% {
+    -webkit-filter: blur(6px) grayscale(1);
+  }
+}</code></pre>
+	</section>
+				
+					<section class="demo-5" data-state="start-anim">
+						<div class="target">
+							<h2>CSS Shaders</h2>
+							<div class="buffer" style="text-align: center;">
+								<div id="output1" style="width: 160px; height: 120px;"></div>
+								<div id="output2" style="width: 160px; height: 120px;"></div>   
+							</div>
+							<pre style="position: absolute;"><code>.demo-5 .target {
+  transition: all 2000ms;
+  -webkit-filter: custom(url(shaders/demo5.vert) mix(url(shaders/demo5.frag) normal source-atop),
+    40 40,
+    time 0,
+    transform perspective(600));
+}
+
+.demo-5 .target:hover {
+  -webkit-filter: custom(url(shaders/demo5.vert) mix(url(shaders/demo5.frag) normal source-atop),
+    40 40,
+    time 2,
+    transform perspective(600) rotateX(35deg) scale(0.8));
+}</code></pre>
+						</div>
+				     </section>
+				
+					<section data-state="kill-anim">
+				       <h2>Web RTC</h2>
+				<style>
+				#vid1, #vid2 {
+				  height: 269px;
+				  margin: 0 0 20px 0;
+				  width: 358px;
+				}
+				
+				.videos span {
+				  -webkit-perspective: 800;
+				}
+				
+				.videos span:first-child video {
+				  -webkit-transform: rotate3d(0,1,0, 25deg);
+			 	  -webkit-box-reflect:below 3px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.5, transparent), to(white));
+				}
+				
+				.videos span:last-child video {
+                   -webkit-transform: rotate3d(0,1,0, -25deg);
+	-webkit-box-reflect:below 3px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.5, transparent), to(white));
+				}
+				
+				</style>
+				<div>
+				    <button id="btn1" onclick="start()">Start</button>
+				    <button id="btn2" onclick="call()">Call</button>
+				    <button id="btn3" onclick="hangup()">Hang Up</button>
+				  </div>
+					  <div class="videos">
+					     <span><video id="vid1" autoplay></video></span>
+					     <span><video id="vid2" autoplay></video></span>
+                      </div>
+					  
+					
+				    </section>
+					<script>
+						performance.now = performance.now || performance.webkitNow; // hack added by SD!
+
+						btn1.disabled = false;
+						btn2.disabled = true;
+						btn3.disabled = true;
+						var pc1,pc2;
+						var localstream;
+
+						function trace(text) {
+						  // This function is used for logging.
+						  if (text[text.length - 1] == '\n') {
+						    text = text.substring(0, text.length - 1);
+						  }
+						  console.log((performance.now() / 1000).toFixed(3) + ": " + text);
+						}
+
+						function gotStream(stream){
+						  trace("Received local stream");
+						  vid1.src = webkitURL.createObjectURL(stream);
+						  localstream = stream;
+						  btn2.disabled = false;
+						}
+
+						function start() {
+						  trace("Requesting local stream");
+						  btn1.disabled = true;
+						  navigator.webkitGetUserMedia({audio:true, video:true},
+						                               gotStream, function() {});
+						}
+
+						function call() {
+						  btn2.disabled = true;
+						  btn3.disabled = false;
+						  trace("Starting call");
+						  if (localstream.videoTracks.length > 0)
+						    trace('Using Video device: ' + localstream.videoTracks[0].label);
+						  if (localstream.audioTracks.length > 0)
+						    trace('Using Audio device: ' + localstream.audioTracks[0].label);
+						  var servers = null;
+						  pc1 = new webkitRTCPeerConnection(servers);
+						  trace("Created local peer connection object pc1");
+						  pc1.onicecandidate = iceCallback1;
+						  pc2 = new webkitRTCPeerConnection(servers);
+						  trace("Created remote peer connection object pc2");
+						  pc2.onicecandidate = iceCallback2;
+						  pc2.onaddstream = gotRemoteStream;
+
+						  pc1.addStream(localstream);
+						  trace("Adding Local Stream to peer connection");
+
+						  pc1.createOffer(gotDescription1);
+						}
+
+						function gotDescription1(desc){
+						  pc1.setLocalDescription(desc);
+						  trace("Offer from pc1 \n" + desc.sdp);
+						  pc2.setRemoteDescription(desc);
+						  pc2.createAnswer(gotDescription2);
+						}
+
+						function gotDescription2(desc){
+						  pc2.setLocalDescription(desc);
+						  trace("Answer from pc2 \n" + desc.sdp);
+						  pc1.setRemoteDescription(desc);
+						}
+
+						function hangup() {
+						  trace("Ending call");
+						  pc1.close();
+						  pc2.close();
+						  pc1 = null;
+						  pc2 = null;
+						  btn3.disabled = true;
+						  btn2.disabled = false;
+						}
+
+						function gotRemoteStream(e){
+						  vid2.src = webkitURL.createObjectURL(e.stream);
+						  trace("Received remote stream");
+						}
+
+						function iceCallback1(event){
+						  if (event.candidate) {
+						    pc2.addIceCandidate(new RTCIceCandidate(event.candidate));
+						    trace("Local ICE candidate: \n" + event.candidate.candidate);
+						  }
+						}
+
+						function iceCallback2(event){
+						  if (event.candidate) {
+						    pc1.addIceCandidate(new RTCIceCandidate(event.candidate));
+						    trace("Remote ICE candidate: \n " + event.candidate.candidate);
+						  }
+						}</script>
+				</section>
+				<section>
+			        <section>
+			           <h1>Now for something more awesome.</h1>
+			           <h1 class="warning">A New Platform</h1>
+			        </section>
+					<section>
+			           <h1 class="warning">Why?!?!</h1>
+			        </section>
+					<section>
+			            <h2>Apps should be offline by default</h2>
+						<p>Apps should load regardless of connection.</p>
+			        </section>
+			        <section>
+			           <h2>Apps should look and feel native</h2>
+			           <img src="images/chromeapp.png">
+			        </section>
+					<section>
+			           <h2>Apps should be able access to Native API's</h2>
+			           <ul>
+				         <li>Network Sockets</li>
+						 <li>Serial Ports</li>
+					 	 <li>USB and Bluetooth</li>
+						 <li>File System</li>
+						 <li>Media Galleries</li>
+				       </ul>
+			        </section>
+				
+					<section>
+			            <h2>Apps should be Secure by default</h2>
+			            <h3>CSP FTW!</h3>
+			            <pre><code># Block everything, then whitelist from there.
+default-src 'none';
+
+# Accept CSS from the extension's package.
+style-src 'self';
+
+# Accept JavaScript from the extension's package.
+script-src 'self';
+
+# Allow images from Google Maps to load over HTTPS.
+img-src https://maps.google.com;</code></pre>
+
+<pre><code>alert(eval("foo.bar.baz"));
+window.setTimeout("alert('hi')", 10);
+window.setInteral("alert('hi')", 10);
+new Function("return foo.bar.baz");</code></pre>
+			        </section>
+			        <section>
+			            <h2>Finally. Apps should be built using technology that we know and love</h2>
+			            <br>
+			            <p>HTML</p>
+			            <p>CSS</p>
+			            <p>JAVASCRIPT</p>
+			        </section>
+					<section>
+			            <h2>Access to Hardware</h2>
+			            <h3>Network Sockets</h3>
+			            <h1 class="warning">Web Server in the Browser</h1>
+			        </section>
+					<section>
+				       <h2>It's just a Socket</h2>
+				       <pre><code>var socket = chrome.socket;
+socket.create("tcp", {}, function(_socketInfo) {
+  socketInfo = _socketInfo;  // Cache globally [eek]
+  socket.listen(socketInfo.socketId, "127.0.0.1", 8080, 20, function(result) {
+    //Accept the first response
+    socket.accept(socketInfo.socketId, onAccept);
+  });
+});</code></pre>
+				     </section>
+					<section>
+				       <h2>But there is a lot of code</h2>
+				       <pre><code>var onAccept = function(acceptInfo) {
+  // This is a request that the system is processing. 
+  // Read the data.
+  socket.read(acceptInfo.socketId, function(readInfo) {
+    // Parse the request.
+    var data = arrayBufferToString(readInfo.data);
+    // We only want to handle get requests
+    if(data.indexOf("GET ") == 0) {
+      // we can only deal with GET requests
+      var uriEnd =  data.indexOf(" ", 4);
+      if(uriEnd &lt; 0) { /* throw a wobbler */ return; }
+      var uri = data.substring(4, uriEnd);
+      var file = filesMap[uri];  // pick out the file we want to server
+      if(!!file == false) { /* File does not exist */ return; }
+
+      write200Response(acceptInfo.socketId, file);
+    }
+    else {
+      // Throw an error
+      socket.destroy(acceptInfo.socketId); 
+      // We need to say that we can accept another incoming request.
+      socket.accept(socketInfo.socketId, onAccept);
+    }
+  }); 
+};</code></pre>
+				    </section>
+					<section>
+						<h1>Can we use an existing eco-system?</h1>
+					</section>
+					<section>
+						<h1 class="warning">Like Node?</h1>
+					</section>
+					<section>
+			            <h2>Node API's in the Browser</h2>
+			            <h3>Markdown</h3>
+			            <pre><code>onload = function() {
+  var mdEl = document.getElementById("markdown");
+  var htmlEl = document.getElementById("html");
+
+  var md = require( "markdown" ).markdown;
+
+  mdEl.onkeypress = function() {
+    var output = md.toHTML( mdEl.value );
+    htmlEl.innerHTML = output;
+  };
+};</code></pre>
+
+<pre><code>$ browserify -r markdown -o bundle.js</code></pre>
+					</section>
+					<section>
+			            <h2>Node API's in the Browser</h2>
+			            <h3>Browserify + Chrome Mapping = WIN</h3>
+			            <a href="https://github.com/iceddev/http-chromify">https://github.com/iceddev/http-chromify</a> powered by  <a href="https://github.com/GoogleChrome/browserify-chrome">Browserify Chrome</a>
+			<pre><code>var http = require('http');
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello World\n');
+}).listen(1337, '127.0.0.1');
+console.log('Server running at http://127.0.0.1:1337/');</code></pre>
+			        </section>
+			    </section>
+				<section>
+				        <section>
+				            <h1><font face="impact">Closing thoughts</font></h1>
+				        </section>
+						
+						<section>
+						   <h1><font face="impact">Do Awesome</font></h1>
+						</section>
+				</section>
+			    <section>
+			        <h2>Thanks</h2>
+			        <div>
+			            <br>
+			        </div>
+			        <div>@Paul_Kinlan</div>
+			        <div>+Paul Kinlan</div>
+			        <div>http://paul.kinlan.me</div>
+			<br>
+			        <h3>Links</h3>
+			        <ul>
+				       <li>Browserify - <a href="github.com/substack/node-browserify">github.com/substack/node-browserify</a>
+					   <li>Chromeify - <a href="github.com/GoogleChrome/browserify-chrome">github.com/GoogleChrome/browserify-chrome</a>
+					   <li>net - <a href="github.com/GoogleChrome/net-chromeify">github.com/GoogleChrome/net-chromeify</a>
+					   <li>http - <a href="github.com/iceddev/http-chromify">github.com/iceddev/http-chromify</a>
+				    </ul>
+			    </section>
+			</div>
+		
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

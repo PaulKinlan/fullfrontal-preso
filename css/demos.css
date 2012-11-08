@@ -1,0 +1,38 @@
+.demo-5 .target {
+-webkit-transition: all 2000ms;
+   -moz-transition: all 2000ms;
+    -ms-transition: all 2000ms;
+     -o-transition: all 2000ms;
+        transition: all 2000ms;
+
+	padding: 0;
+	background: none;
+	border: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	height: 439px;
+	-webkit-filter: custom(url(shaders/demo5.vert) mix(url(shaders/demo5.frag) normal source-atop),
+		40 40,
+		time 0,
+		transform perspective(600));
+	
+}
+
+.demo-5 .target:hover {
+	-webkit-filter: custom(url(shaders/demo5.vert) mix(url(shaders/demo5.frag) normal source-atop),
+		40 40,
+		time 2,
+		transform perspective(600) rotateX(35deg) scale(0.8));
+}
+
+.demo-5 .target div.buffer {
+	position: absolute;
+    z-index: 101;
+    bottom: 50%;
+    right:0;
+}
+
+.demo-5 .target div.buffer div {
+  position: absolute;
+  z-index: 100;
+}
